@@ -1,0 +1,26 @@
+{
+  "name": "music_library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "jasmine-node --autotest specs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylorpeat/LS260-L5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taylorpeat/LS260-L5/issues"
+  },
+  "homepage": "https://github.com/taylorpeat/LS260-L5#readme",
+  "dependencies": {
+    "jasmine-node": "^1.14.5",
+    "node-static": "^0.7.8",
+    "nodemon": "^1.10.2",
+    "request": "^2.74.0"
+  }
+}
