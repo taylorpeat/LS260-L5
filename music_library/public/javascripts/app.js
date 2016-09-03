@@ -5,7 +5,7 @@ var App = {
   },
   fetchAlbums: function() {
     this.albums.fetch({
-        success: this.albumsLoaded.bind(this);
+        success: this.albumsLoaded.bind(this)
     });
   },
   albumsLoaded: function() {}
