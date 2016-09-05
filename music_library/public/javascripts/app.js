@@ -6,7 +6,7 @@ var App = {
   fetchAlbums: function() {
     this.view = new AlbumsView({ collection: this.albums });
     this.albums.fetch({
-        success: this.albumsLoaded.bind(this);
+        success: this.albumsLoaded.bind(this)
     });
   },
   albumsLoaded: function() {
