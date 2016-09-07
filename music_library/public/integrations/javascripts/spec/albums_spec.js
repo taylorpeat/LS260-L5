@@ -9,4 +9,6 @@ describe("albums", function() {
 
     App.init();
   });
+
+  it("")
 });
