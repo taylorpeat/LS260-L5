@@ -10,9 +10,14 @@
   <script src="javascripts/lib/jasmine-2.3.4/jasmine-html.js"></script>
   <script src="javascripts/lib/jasmine-2.3.4/boot.js"></script>
   <script src="javascripts/spec/albums_spec.js"></script>
-
+  <style>
+    #albums {
+      display: none;
+    }
+  </style>
 </head>
 <body>
+  <ul id="albums">Hi</ul>
   <script data-name="albums" type="text/x-handlebars">
     {{#each albums}}
     <li>
