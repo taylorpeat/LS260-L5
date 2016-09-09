@@ -11,27 +11,26 @@
       <h1>Albums</h1>
       <ul id="albums"></ul>
     </main>
-    <div id="screen"></div>
-    <div class="modal">
-      <img src="http://a5.mzstatic.com/us/r30/Music5/v4/83/10/90/83109037-0c67-bf88-a2c5-a022b21de7d7/cover170x170.jpeg">
-      <h1>1989</h1>
-      <h2>Taylor Swift</h2>
-      <p>Released: Oct 27, 2014</p>
-      <ul>
-        <li>
-          <span>1. Welcome To New York</span>
-          <i>3:32</i>
-        </li>
-        <li>
-          <span>2. Welcome To New York</span>
-          <i>3:32</i>
-        </li>
-        <li>
-          <span>3. Welcome To New York</span>
-          <i>3:32</i>
-        </li>
-      </ul>
-    </div>
+    <script data-name="tracks" type="text/x-handlebars">
+      <div id="screen"></div>
+      <div class="modal">
+        <img src="{{cover}}">
+        <figcaption>
+          <h1>{{title}}</h1>
+          <h2>{{artist}}</h2>
+          <p>Released: {{date}}</p>
+        </figcaption>
+        <a href="#">Close</a>
+        <ol>
+          {{#each tracks}}
+          <li>
+            <span>{{title}}</span>
+            <i>{{length}}</i>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </script>
     <script data-name="albums" type="text/x-handlebars">
       {{#each albums}}
       <li>

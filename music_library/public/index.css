@@ -87,4 +87,63 @@ ul:after {
   top: 25px;
   bottom: 25px;
   z-index: 2;
+  padding: 30px;
+}
+
+.modal img {
+  float: left;
+  margin-right: 12px;
+  height: 100px;
+  margin-bottom: 12px;
+}
+
+.modal h1 {
+  font-size: 26px;
+}
+
+.modal h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.modal p {
+  font-size: 16px;
+}
+
+.modal p:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.modal ol {
+  width: 100%;
+  list-style: decimal inside none;
+}
+
+.modal li {
+  border-bottom: 1px solid #9d0;
+  border-top: 1px solid #9d0;
+  width: 100%;
+  line-height: 35px;
+  margin: 0;
+}
+
+.modal li + li {
+  border-top: none;
+}
+
+.modal i {
+  float: right;
+}
+
+.modal a {
+  float: right;
+  font-weight: normal;
+  text-decoration: underline;
+  color: #9d0;
+}
+
+.modal figcaption {
+  float: left;
 }
