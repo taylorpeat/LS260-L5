@@ -11,30 +11,30 @@
       <h1>Albums</h1>
       <ul id="albums"></ul>
     </main>
+    <div id="overlay"></div>
     <script data-name="tracks" type="text/x-handlebars">
-      <div id="screen"></div>
-      <div class="modal">
-        <img src="{{cover}}">
-        <figcaption>
-          <h1>{{title}}</h1>
-          <h2>{{artist}}</h2>
-          <p>Released: {{date}}</p>
-        </figcaption>
-        <a href="#">Close</a>
-        <ol>
-          {{#each tracks}}
-          <li>
-            <span>{{title}}</span>
-            <i>{{length}}</i>
-          </li>
-          {{/each}}
-        </ol>
-      </div>
+      {{#with album}}
+      <img src="{{cover}}">
+      <figcaption>
+        <h1>{{title}}</h1>
+        <h2>{{artist}}</h2>
+        <p>Released: {{date}}</p>
+      </figcaption>
+      {{/with}}
+      <a href="#">Close</a>
+      <ol>
+        {{#each tracks}}
+        <li>
+          <span>{{title}}</span>
+          <i>{{length}}</i>
+        </li>
+        {{/each}}
+      </ol>
     </script>
     <script data-name="albums" type="text/x-handlebars">
       {{#each albums}}
       <li>
-        <a href="{{track_url}}">
+        <a href="{{tracks_url}}">
           <img src="{{cover}}">
           <h2>{{title}}</h2>
           <h3>{{artist}}</h3>
@@ -44,8 +44,11 @@
       {{/each}}
     </script>
     <script src="javascripts/models/album.js"></script>
+    <script src="javascripts/models/track.js"></script>
     <script src="javascripts/collections/albums.js"></script>
+    <script src="javascripts/collections/tracks.js"></script>
     <script src="javascripts/views/albums.js"></script>
+    <script src="javascripts/views/tracks.js"></script>
     <script src="javascripts/app.js"></script>
     <script>
       App.init();

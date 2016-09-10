@@ -13,6 +13,7 @@ main {
   position: relative;
   left: -350px;
   padding: 20px 20px 40px 20px;
+  box-sizing: border-box;
   text-align: center;
 }
 
@@ -69,7 +70,7 @@ ul:after {
   display: block;
 }
 
-#screen {
+#overlay {
   background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
   left: 0;
@@ -77,9 +78,10 @@ ul:after {
   top: 0;
   bottom: 0;
   z-index: 1;
+  display: none;
 }
 
-.modal {
+#modal {
   background-color: #dfc;
   position: absolute;
   left: 25px;
@@ -88,40 +90,42 @@ ul:after {
   bottom: 25px;
   z-index: 2;
   padding: 30px;
+  display: none;
+  overflow: hidden;
 }
 
-.modal img {
+#modal img {
   float: left;
   margin-right: 12px;
   height: 100px;
   margin-bottom: 12px;
 }
 
-.modal h1 {
+#modal h1 {
   font-size: 26px;
 }
 
-.modal h2 {
+#modal h2 {
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-.modal p {
+#modal p {
   font-size: 16px;
 }
 
-.modal p:after {
+#modal p:after {
   clear: both;
   content: "";
   display: block;
 }
 
-.modal ol {
+#modal ol {
   width: 100%;
   list-style: decimal inside none;
 }
 
-.modal li {
+#modal li {
   border-bottom: 1px solid #9d0;
   border-top: 1px solid #9d0;
   width: 100%;
@@ -129,21 +133,21 @@ ul:after {
   margin: 0;
 }
 
-.modal li + li {
+#modal li + li {
   border-top: none;
 }
 
-.modal i {
+#modal i {
   float: right;
 }
 
-.modal a {
+#modal a {
   float: right;
   font-weight: normal;
   text-decoration: underline;
   color: #9d0;
 }
 
-.modal figcaption {
+#modal figcaption {
   float: left;
 }

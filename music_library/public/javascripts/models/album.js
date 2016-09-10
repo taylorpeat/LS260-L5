@@ -1,6 +1,6 @@
 var Album = Backbone.Model.extend({
   parse: function(attrs) {
-    attrs.track_url = "/album/" + Slugify(attrs.title);
+    attrs.tracks_url = "/albums/" + encodeURIComponent(attrs.title) + ".json";
     return attrs;
   }
 });
