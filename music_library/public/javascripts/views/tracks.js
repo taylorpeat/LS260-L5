@@ -6,6 +6,8 @@ var TracksView = Backbone.View.extend({
       album: this.album.toJSON(),
       tracks: this.tracks.toJSON()
     }));
+    this.$el.fadeIn(this.duration);
+    $("#overlay").fadeIn(this.duration);
   },
   initialize: function(options) {
     this.album = options.album;
