@@ -13,11 +13,11 @@ describe("albums", function() {
   });
 
   it("Has compiled handlebars template", function() {
-    expect(typeof App.view.template).toBe("function");
+    expect(typeof App.albumsView.template).toBe("function");
   });
 
   it("Renders to an #albums container", function() {
-    App.view.render();
+    App.albumsView.render();
     expect($("#albums").children("li").length).toEqual(3);
   });
 
@@ -32,7 +32,7 @@ describe("albums", function() {
   });
 
   it("Verify tracks_url is set on model", function() {
-    var track_url = App.albums.models[0].get("track_url");
-    expect(track_url).toMatch(/album/);
+    var tracks_url = App.albums.models[0].get("tracks_url");
+    expect(tracks_url).toMatch(/albums/);
   });
 });

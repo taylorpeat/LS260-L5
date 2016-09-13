@@ -6,14 +6,5 @@ var AlbumsView = Backbone.View.extend({
   initialize: function() {
     this.$el = $("#albums");
     this.listenTo(this.collection, "change", this.render);
-    this.bind();
-  },
-  bind: function() {
-    this.$el.on("click", "a", function(e) {
-      e.preventDefault();
-      var idx = $(this).parent("li").index();
-
-      new TracksView({ album: App.albums.models[idx] });
-    });
   }
 });

@@ -1,7 +1,6 @@
 var App = {
   init: function() {
     this.albums = new Albums();
-    this.tracks = [];
     this.fetchAlbums();
   },
   fetchAlbums: function() {
@@ -14,11 +13,11 @@ var App = {
     this.albumsView.render();
   },
   fetchTracks: function(title) {
-    var tracks = new (Tracks.extend({
-      url: "/albums/" + name + ".json"
-    }))();
+    var tracks = new Tracks({
+      tracks_url: "/albums/" + title + ".json"
+    });
 
-    this.selected_album = this.albums.findWhere({ title: title });
+    this.selected_album = this.albums.findWhere({ title: decodeURI(title) });
 
     tracks.fetch({
       success: this.tracksLoaded.bind(this)
@@ -34,12 +33,12 @@ var App = {
   },
 }
 
-var Router = Backbone.router.extend({
+var Router = Backbone.Router.extend({
   routes: {
     "albums/:title": "getAlbum"
   },
   getAlbum: function(title) {
-    App.fetchTracks(name);
+    App.fetchTracks(title);
   },
   index: function() {
     if (App.tracks.$el.is(":animated")) {
@@ -51,7 +50,16 @@ var Router = Backbone.router.extend({
   }
 });
 
+var router = new Router();
+
 Backbone.history.start({
   pushState: true,
   silent: true
-})
+});
+
+$(document).on("click", "a[href^='/']", function(e) {
+  e.preventDefault();
+
+  router.navigate($(e.currentTarget).attr("href").replace(/^\/|\.json/g, ""), { trigger: true });
+
+});
