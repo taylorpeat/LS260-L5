@@ -30,6 +30,7 @@ var App = {
     });
 
     tracks_modal.render();
+    this.tracks = tracks_modal;
   },
 }
 
@@ -41,7 +42,7 @@ var Router = Backbone.Router.extend({
     App.fetchTracks(title);
   },
   index: function() {
-    if (App.tracks.$el.is(":animated")) {
+    if (!App.tracks.$el.is(":animated")) {
       App.tracks.fadeOut();
     }
   },

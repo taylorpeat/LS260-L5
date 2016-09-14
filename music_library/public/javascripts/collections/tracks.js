@@ -1,5 +1,5 @@
 var Tracks = Backbone.Collection.extend({
-  model: track,
+  model: Track,
   initialize: function(options) {
     this.url = options.tracks_url
   }

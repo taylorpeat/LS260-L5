@@ -13,15 +13,18 @@ var TracksView = Backbone.View.extend({
     "click a": "close"
   },
   initialize: function(options) {
+    this.$el.appendTo("body");
     this.album = options.album;
     this.duration = 300;
-    this.$el.appendTo("body");
   },
-  close: function() {
+  fadeOut: function(e) {
     this.$el.fadeOut(this.duration, function() {
       this.remove();
     }.bind(this) );
     $("#overlay").fadeOut(this.duration);
+  },
+  close: function() {
+    this.fadeOut();
     history.back();
   }
 });

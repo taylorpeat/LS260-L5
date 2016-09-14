@@ -1,4 +1,4 @@
-describe("albums", function() {
+describe("Albums Spec", function() {
   beforeEach(function(done) {
     App.albumsLoaded = function(){
       done();

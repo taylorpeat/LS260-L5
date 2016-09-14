@@ -1,1 +1,1 @@
-var track = Backbone.Model.extend({});
+var Track = Backbone.Model.extend({});
